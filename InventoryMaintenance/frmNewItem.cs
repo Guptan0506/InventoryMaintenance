@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
 
@@ -17,12 +19,16 @@ namespace InventoryMaintenance
 
         // TODO: Declare a variable that declares a new InvItem object and set it to null.
         // Hint: Make it public so frmInvMaint can access the item after this form closes.
-
+        public InvItem item = null;
 
         // TODO: Create a method that shows this form as a dialog window
         //       and then returns the new InvItem created by the user.
         // Hint: Use this.ShowDialog() to display the form.
-       
+        public InvItem GetNewItem()
+        {
+            this.ShowDialog();
+            return item;
+        }
 
 
 
