@@ -9,13 +9,13 @@ namespace InventoryMaintenance
     public class InvItem
     {
         public InvItem() { }
-        public InvItem(string itemNo, string desc, decimal price)
+        public InvItem(int itemNo, string desc, decimal price)
         {
             ItemNo = itemNo;
             Description = desc;
             Price = price;
         }
-        public string ItemNo { get; set; }
+        public int ItemNo { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
 

@@ -18,12 +18,12 @@ namespace InventoryMaintenance
         }
 
         // TODO: Declare here a private variable that can store a list of InvItem objects and intialize it to null.
-
+        private List<InvItem> invItems = null;
         private void frmInvMaint_Load(object sender, EventArgs e)
         {
             // TODO: Load the list of inventory items from the database class (InvItemDB).
             // Hint: Call InvItemDB.GetItems() and assign the result to invItems.
-
+            invItems = InvItemDB.GetItems();
 
             // This method call updates the list box with the items.
             FillItemListBox();
@@ -34,8 +34,10 @@ namespace InventoryMaintenance
             lstItems.Items.Clear();
             // TODO: Code here that loads the list box with the items in the list.
             // Hint: Loop through each item in invItems and add it to lstItems.
-            
-
+            foreach (var items in invItems)
+            {
+                lstItems.Items.Add(items.GetDisplayText(","));
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -45,7 +47,8 @@ namespace InventoryMaintenance
             // TODO: If a new item was created (not null), add it to invItems,
             //       save the updated list using InvItemDB.SaveItems, 
             //       and refresh the list box by calling FillItemListBox().
-
+            frmNewItem newItem;
+            InvItemDB.GetItems();
 
 
         }
