@@ -47,8 +47,16 @@ namespace InventoryMaintenance
             // TODO: If a new item was created (not null), add it to invItems,
             //       save the updated list using InvItemDB.SaveItems, 
             //       and refresh the list box by calling FillItemListBox().
-            frmNewItem newItem;
-            InvItemDB.GetItems();
+            frmNewItem newItemForm = new frmNewItem();
+
+            InvItem newItem = newItemForm.GetNewItem();
+
+            if (newItem != null)
+            {
+                invItems.Add(newItem);
+                InvItemDB.SaveItems(invItems);
+                FillItemListBox();
+            }
 
 
         }
@@ -64,9 +72,16 @@ namespace InventoryMaintenance
                 //          - Remove the selected item from invItems
                 //          - Save the updated list with InvItemDB.SaveItems
                 //          - Refresh the list box by calling FillItemListBox()
-
-
-
+                string title = "Delete Item";
+                string message = "Do you want to delete this item?";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    invItems.RemoveAt(i);
+                    InvItemDB.SaveItems(invItems);
+                    FillItemListBox();
+                } 
             }
         }
 

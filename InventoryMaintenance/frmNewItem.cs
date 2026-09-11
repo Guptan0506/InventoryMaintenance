@@ -42,7 +42,7 @@ namespace InventoryMaintenance
                 //       - Convert txtPrice.Text to a decimal
                 // TODO: Assign the new object to the item variable.
                 // TODO: Close the form after saving the item.
-                item = new InvItem(Convert.ToInt32(txtItemNo.Text), txtDescription.Text, Convert.ToDecimal(txtPrice));
+                item = new InvItem(Convert.ToInt32(txtItemNo.Text), txtDescription.Text, Convert.ToDecimal(txtPrice.Text));
                 this.Close();
             }
         }
