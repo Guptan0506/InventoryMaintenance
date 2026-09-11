@@ -77,7 +77,7 @@ namespace InventoryMaintenance
                 //          - Refresh the list box by calling FillItemListBox()
                 string title = "Delete Item";
                 string message = "Do you want to delete this item?";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
