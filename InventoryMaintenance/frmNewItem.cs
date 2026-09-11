@@ -24,14 +24,14 @@ namespace InventoryMaintenance
         // TODO: Create a method that shows this form as a dialog window
         //       and then returns the new InvItem created by the user.
         // Hint: Use this.ShowDialog() to display the form.
+        // Navya Gupta
         public InvItem GetNewItem()
         {
             this.ShowDialog();
             return item;
         }
 
-
-
+        // Navya Gupta
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (IsValidData())
@@ -42,6 +42,8 @@ namespace InventoryMaintenance
                 //       - Convert txtPrice.Text to a decimal
                 // TODO: Assign the new object to the item variable.
                 // TODO: Close the form after saving the item.
+                
+                //This converts the ItemNo. to an integer, Makes the description text, and converts the price to decimal
                 item = new InvItem(Convert.ToInt32(txtItemNo.Text), txtDescription.Text, Convert.ToDecimal(txtPrice.Text));
                 this.Close();
             }

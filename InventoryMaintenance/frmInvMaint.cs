@@ -16,9 +16,11 @@ namespace InventoryMaintenance
         {
             InitializeComponent();
         }
-
+        
         // TODO: Declare here a private variable that can store a list of InvItem objects and intialize it to null.
         private List<InvItem> invItems = null;
+
+        // Navya Gupta
         private void frmInvMaint_Load(object sender, EventArgs e)
         {
             // TODO: Load the list of inventory items from the database class (InvItemDB).
@@ -29,6 +31,7 @@ namespace InventoryMaintenance
             FillItemListBox();
         }
 
+        // Navya Gupta
         private void FillItemListBox()
         {
             lstItems.Items.Clear();
@@ -40,6 +43,7 @@ namespace InventoryMaintenance
             }
         }
 
+        // Navya Gupta
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // TODO: Create an instance of the new item form (frmNewItem).
@@ -57,10 +61,9 @@ namespace InventoryMaintenance
                 InvItemDB.SaveItems(invItems);
                 FillItemListBox();
             }
-
-
         }
 
+        // Navya Gupta
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int i = lstItems.SelectedIndex;
